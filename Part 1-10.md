@@ -11,17 +11,17 @@
 ## Part 2: Create Your First Repository
 Commands used:
 ```bash
-mkdir my-first-repo
-cd my-first-repo
+mkdir OOPgit
+cd OOPgit
 git init
-touch readme.txt
+touch README.md
 ```
 
 ---
 
 ## Part 3: Your First Commit
 1. `git status` — shows the current state of the repository
-2. `git add readme.txt` — stages readme.txt for commit
+2. `git add README.md` — stages README.md for commit
 3. `git commit -m "Add readme file"` — commits with the message
 4. `git log` — shows the commit history
 
@@ -30,12 +30,12 @@ touch readme.txt
 ## Part 4: Make Changes
 1. Command used to edit the file:
 ```bash
-echo "My first change" >> readme.txt
+echo "My first change" >> README.md
 ```
-2. `git status` now shows `readme.txt` under **"Changes not staged for commit"** — Git knows the file was modified since the last commit but the change hasn't been staged yet.
+2. `git status` now shows `README.md` under **"Changes not staged for commit"** — Git knows the file was modified since the last commit but the change hasn't been staged yet.
 3. Commands used:
 ```bash
-git add readme.txt
+git add README.md
 git commit -m "Update readme with new content"
 ```
 4. I now have **2 commits**.
@@ -62,10 +62,10 @@ git branch                   # verify current branch (* marks the active one)
 
 ## Part 7: Create a Bash Script on a Branch
 ```bash
-touch install.sh
+touch env_install.sh
 ```
 
-Content of `install.sh`:
+Content of `env_install.sh`:
 ```bash
 #!/bin/bash
 echo "Starting installation..."
@@ -74,8 +74,8 @@ sudo apt install -y curl
 echo "Installation complete!"
 ```
 ```bash
-chmod +x install.sh                    # make it executable
-git add install.sh                     # stage
+chmod +x env_install.sh                    # make it executable
+git add env_install.sh                     # stage
 git commit -m "Add install script"     # commit
 git log --oneline                      # check history
 ```
@@ -87,10 +87,10 @@ git log --oneline                      # check history
 git checkout main
 ls
 ```
-- `install.sh` is **not present** because it was committed on `feature-script`. Each branch has its own independent history — `main` doesn't have those changes until we merge.
+- `env_install.sh` is **not present** because it was committed on `feature-script`. Each branch has its own independent history — `main` doesn't have those changes until we merge.
 ```bash
 git merge feature-script   # merge feature-script into main
-ls                         # install.sh now appears
+ls                         # env_install.sh now appears
 git log --oneline          # commits from feature-script are now in main's history
 git branch -d feature-script  # delete the merged branch
 ```
@@ -102,16 +102,16 @@ git branch -d feature-script  # delete the merged branch
 git remote add origin https://github.com/Lara-Normand-Pro/OOPgit.git
 git push -u origin main
 ```
-- After refreshing GitHub, I can see all my files (`README.md`, `install.sh`) and the full commit history.
+- After refreshing GitHub, I can see all my files (`README.md`, `env_install.sh`) and the full commit history.
 
 ---
 
 ## Part 10: Delete and Clone
 ```bash
 cd ..
-rm -rf my-first-repo
+rm -rf OOPgit
 git clone https://github.com/Lara-Normand-Pro/OOPgit.git
-cd my-first-repo
+cd OOPgit
 ls
 ```
-- After cloning, all files are present: `README.md` and `install.sh`.
+- After cloning, all files are present: `README.md` and `env_install.sh`.
