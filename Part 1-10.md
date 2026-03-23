@@ -1,7 +1,7 @@
 # Git exo — my answers
 
 ## Part 1: Setup & config
-- Git version: `git --version`
+- Git version: ` 2.46.0`
 - Config commands used:
   - `git config --global user.name "Lara Normand"`
   - `git config --global user.email "lara.normand29+pro@gmail.com "`
